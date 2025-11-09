@@ -12,8 +12,9 @@ class LocalRepository:
         """
         Crea un nuevo local
         """
-        query = "CALL prc_local_insertar(%s, %s, %s)"
-        self.cursor.execute(query, (local.local, local.cliente, local.territorio))
+        query = "SELECT func_local_insertar(%s, %s, %s) AS id"
+        self.cursor.execute(query, (local.local, local.cliente, local.territorio))        
+        return self.cursor.fetchone()
     
     def get_locals(self):
         """

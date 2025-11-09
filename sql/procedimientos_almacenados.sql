@@ -1,17 +1,19 @@
 -- ==============
 -- INSERTAR LOCAL
 -- ==============
-CREATE OR REPLACE PROCEDURE prc_local_insertar(
+CREATE OR REPLACE FUNCTION func_local_insertar(
 	p_local TEXT,
 	p_cliente TEXT,
 	p_territorio TEXT
-) 
+)
+RETURNS INT
 LANGUAGE plpgsql
 AS $$
 DECLARE
 	v_localid INT;
 	v_clienteid INT;
 	v_territorioid INT;
+	v_nuevoid INT;
 BEGIN
 
 	-- Dar formato a los parametros de tipo texto
@@ -50,7 +52,10 @@ BEGIN
 	-- Crear local si no existe
 	IF v_localid IS NULL THEN
 		INSERT INTO local(nombre, clienteid, territorioid)
-		VALUES(p_local, v_clienteid, v_territorioid);
+		VALUES(p_local, v_clienteid, v_territorioid)
+		RETURNING id INTO v_nuevoid;
+
+		RETURN v_nuevoid
 	-- Si el local ya existe lanzar un error
 	ELSE
 		RAISE EXCEPTION 'El local ya existe.';
@@ -171,12 +176,13 @@ $$;
 -- =================
 -- INSERTAR PRODUCTO
 -- =================
-CREATE OR REPLACE PROCEDURE prc_producto_insertar(
+CREATE OR REPLACE FUNCTION func_producto_insertar(
 	p_producto TEXT,
 	p_categoria TEXT,
 	p_marca TEXT,
 	p_empresa TEXT
 )
+RETURNS INT
 LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -185,6 +191,7 @@ DECLARE
 	v_marcaid INT;
 	v_empresaid INT;
 	v_empresa_categoria_id INT;
+	v_nuevoid INT;
 BEGIN
 
 	-- Dar formato a los parametros de tipo texto
@@ -255,7 +262,10 @@ BEGIN
 	-- Crear Producto si no existe
 	IF v_productoid IS NULL THEN
 		INSERT INTO producto(nombre, categoriaid, marcaid, empresaid) 
-		VALUES(p_producto, v_categoriaid, v_marcaid, v_empresaid);
+		VALUES(p_producto, v_categoriaid, v_marcaid, v_empresaid)
+		RETURNING id INTO v_nuevoid;
+
+		RETURN v_nuevoid;
 	-- Si el producto ya existe lanzar un error
 	ELSE
 		RAISE EXCEPTION 'El producto ya existe.';

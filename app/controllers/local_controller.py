@@ -11,9 +11,9 @@ class LocalController:
         self.repository = LocalRepository(db_cursor)
 
     def create_local(self, local: LocalCreate):
-        try:
-            self.repository.create_local(local)
-            return {"success": True, "message": "Local creado correctamente."}        
+        try:            
+            data = self.repository.create_local(local)            
+            return {"success": True, "message": "Local creado correctamente.", "id": data.get("id")}        
         except Exception as e:
             raise e
         

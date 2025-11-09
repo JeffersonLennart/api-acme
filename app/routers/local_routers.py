@@ -11,7 +11,7 @@ def create_local(local: LocalCreate, db_cursor=Depends(get_db)):
     try:
         # Se instancia el controlador, pasándole el cursor
         controller = LocalController(db_cursor)
-        # Se crea el local
+        # Se crea el local        
         result = controller.create_local(local)
         return result
     except RaiseException as e:

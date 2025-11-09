@@ -12,8 +12,8 @@ class ProductController:
 
     def create_product(self, product: ProductCreate):
         try:
-            self.repository.create_product(product)
-            return {"success": True, "message": "Producto creado correctamente."}
+            data = self.repository.create_product(product)
+            return {"success": True, "message": "Producto creado correctamente.", "id": data.get("id")}
         except Exception as e:
             raise e
         

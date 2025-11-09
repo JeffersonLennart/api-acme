@@ -11,9 +11,10 @@ class ProductRepository:
     def create_product(self, product: ProductCreate):
         """
         Crea un nuevo producto
-        """
-        query = "CALL prc_producto_insertar(%s, %s, %s, %s)"
+        """        
+        query = "SELECT func_producto_insertar(%s, %s, %s, %s) AS id"
         self.cursor.execute(query, (product.producto, product.categoria, product.marca, product.empresa))
+        return self.cursor.fetchone()
     
     def get_products(self):
         """
