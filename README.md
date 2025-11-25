@@ -1,7 +1,7 @@
 # ACME API Project
 
 ## ETL Process
-This project complements the ETL process defined in the [ETL repository](https://github.com/JeffersonLennart/api-acme). It details the necessary steps to ingest data from Excel files into the database, covering both the business problem description and the database design.
+This project complements the ETL process defined in the [ETL repository](https://github.com/JeffersonLennart/importador-acme). It details the necessary steps to ingest data from Excel files into the database, covering both the business problem description and the database design.
 
 ## API Description
 This RESTful API is built using the **FastAPI** framework (Python). It is designed specifically to handle CRUD operations by directly calling **PostgreSQL Stored Procedures**, intentionally bypassing the use of an ORM system for direct database management.
