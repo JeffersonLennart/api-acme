@@ -63,18 +63,40 @@ Additionally, a breakdown of the endpoints is provided below:
 
 <details markdown="1">
 <summary>Locations Endpoints</summary>
-  
-*Add details about location endpoints here...*
-</details>
 
-<details markdown="1">
-<summary>Clients Endpoints</summary>
+| Method | Route | Description | Body (JSON) |
+|--------|-------|-------------|-------------|
+| GET | `/locals` | Retrieve a list of all locations | N/A |
+| GET | `/locals/{id}` | Retrieve details of a specific location | N/A |
+| POST | `/locals` | Create a new location | `{ "local": "...", "cliente": "...", "territorio": "..." }` |
+| PUT | `/locals/{id}` | Update the data of a specific location | `{ "local": "...", "cliente": "...", "territorio": "..." }` |
+| DELETE | `/locals/{id}` | Remove a specific location | N/A |
 
-*Add details about client endpoints here...*
 </details>
 
 <details markdown="1">
 <summary>Products Endpoints</summary>
 
-*Add details about product endpoints here...*
+| Method | Route | Description | Body (JSON) |
+|--------|-------|-------------|-------------|
+| GET | `/products` | Retrieve a list of all products | N/A |
+| GET | `/products/{id}` | Retrieve details of a specific product | N/A |
+| POST | `/products` | Create a new product | `{ "producto": "...", ..., "empresa": "..." }` |
+| PUT | `/products/{id}` | Update the data of a specific product | `{ "producto": "...", ..., "empresa": "..." }` |
+| DELETE | `/products/{id}` | Remove a specific product | N/A |
+
 </details>
+
+<details markdown="1">
+<summary>Clients Endpoints</summary>
+
+| Method | Route | Description | Body (JSON) |
+|--------|-------|-------------|-------------|
+| GET | `/clients` | Retrieve a list of all clients | N/A |
+| GET | `/clients/{id}` | Retrieve details of a specific client | N/A |
+| POST | `/clients` | Create a new client | `{ "cliente": "...", "industria": "..." }` |
+| PUT | `/clients/{id}` | Update the data of a specific client | `{ "cliente": "...", "industria": "..." }` |
+| DELETE | `/clients/{id}` | Remove a specific client | N/A |
+
+</details>
+
