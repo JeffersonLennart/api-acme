@@ -36,8 +36,8 @@ You can use `.env.example` as a template (you only need to update `DB_PASSWORD`)
 
 ```env
 DB_HOST=localhost
-DB_PORT=5433
-DB_NAME=ACME 
+DB_PORT=5432
+DB_NAME=acme 
 DB_USER=postgres
 DB_PASSWORD=**YOUR PASSWORD**
 ```
