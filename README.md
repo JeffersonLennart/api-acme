@@ -62,7 +62,7 @@ FastAPI automatically generates interactive documentation based on the Swagger s
 Additionally, a breakdown of the endpoints is provided below:
 
 <details markdown="1">
-<summary>Locations Endpoints</summary>
+<summary><b>Locations Endpoints</b></summary>
 
 | Method | Route | Description | Body (JSON) |
 |--------|-------|-------------|-------------|
@@ -72,7 +72,7 @@ Additionally, a breakdown of the endpoints is provided below:
 | PUT | `/locals/{id}` | Update the data of a specific location | `{ "local": "...", "cliente": "...", "territorio": "..." }` |
 | DELETE | `/locals/{id}` | Remove a specific location | N/A |
 
-#### 1. Retrieve a list of all locations (`GET /locals`)
+### 1. Retrieve a list of all locations (`GET /locals`)
 
 **Request Example**
 
@@ -100,7 +100,7 @@ curl --request GET \
 ]
 ```
 
-#### 2. Retrieve details of a specific location (`GET /locals/{id}`)
+### 2. Retrieve details of a specific location (`GET /locals/{id}`)
 
 **Request Example**
 
@@ -120,7 +120,7 @@ curl --request GET \
 }
 ```
 
-#### 3. Create a new location (`POST /locals`)
+### 3. Create a new location (`POST /locals`)
 
 **Request Example**
 
@@ -145,7 +145,7 @@ curl --request POST \
 }
 ```
 
-#### 4. Update the data of a specific location (`PUT /locals/{id}`)
+### 4. Update the data of a specific location (`PUT /locals/{id}`)
 
 **Request Example**
 
@@ -169,7 +169,7 @@ curl --request PUT \
 }
 ```
 
-#### 5. Remove a specific location (`DELETE /locals/{id}`)
+### 5. Remove a specific location (`DELETE /locals/{id}`)
 
 **Request Example**
 
@@ -189,7 +189,7 @@ curl --request DELETE \
 </details>
 
 <details markdown="1">
-<summary>Products Endpoints</summary>
+<summary><b>Products Endpoints</b></summary>
 
 | Method | Route | Description | Body (JSON) |
 |--------|-------|-------------|-------------|
@@ -200,7 +200,7 @@ curl --request DELETE \
 | DELETE | `/products/{id}` | Remove a specific product | N/A |
 
 
-#### 1. Retrieve a list of all products (`GET /products`)
+### 1. Retrieve a list of all products (`GET /products`)
 
 **Request Example**
 
@@ -230,7 +230,7 @@ curl --request GET \
 ]
 ```
 
-#### 2. Retrieve details of a specific product (`GET /products/{id}`)
+### 2. Retrieve details of a specific product (`GET /products/{id}`)
 
 **Request Example**
 
@@ -251,7 +251,7 @@ curl --request GET \
 }
 ```
 
-#### 3. Create a new product (`POST /products`)
+### 3. Create a new product (`POST /products`)
 
 **Request Example**
 
@@ -277,7 +277,7 @@ curl --request POST \
 }
 ```
 
-#### 4. Update the data of a specific product (`PUT /products/{id}`)
+### 4. Update the data of a specific product (`PUT /products/{id}`)
 
 **Request Example**
 
@@ -302,7 +302,7 @@ curl --request PUT \
 }
 ```
 
-#### 5. Remove a specific product (`DELETE /products/{id}`)
+### 5. Remove a specific product (`DELETE /products/{id}`)
 
 **Request Example**
 
@@ -322,7 +322,7 @@ curl --request DELETE \
 </details>
 
 <details markdown="1">
-<summary>Clients Endpoints</summary>
+<summary><b>Clients Endpoints</b></summary>
 
 | Method | Route | Description | Body (JSON) |
 |--------|-------|-------------|-------------|
@@ -333,7 +333,7 @@ curl --request DELETE \
 | DELETE | `/clients/{id}` | Remove a specific client | N/A |
 
 
-#### 1. Retrieve a list of all clients (`GET /clients`)
+### 1. Retrieve a list of all clients (`GET /clients`)
 
 **Request Example**
 
@@ -359,7 +359,7 @@ curl --request GET \
 ]
 ```
 
-#### 2. Retrieve details of a specific client (`GET /clients/{id}`)
+### 2. Retrieve details of a specific client (`GET /clients/{id}`)
 
 **Request Example**
 
@@ -378,7 +378,7 @@ curl --request GET \
 }
 ```
 
-#### 3. Create a new client (`POST /clients`)
+### 3. Create a new client (`POST /clients`)
 
 **Request Example**
 
@@ -402,7 +402,7 @@ curl --request POST \
 }
 ```
 
-#### 4. Update the data of a specific client (`PUT /clients/{id}`)
+### 4. Update the data of a specific client (`PUT /clients/{id}`)
 
 **Request Example**
 
@@ -425,7 +425,7 @@ curl --request PUT \
 }
 ```
 
-#### 5. Remove a specific client (`DELETE /clients/{id}`)
+### 5. Remove a specific client (`DELETE /clients/{id}`)
 
 **Request Example**
 
