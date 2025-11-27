@@ -72,6 +72,120 @@ Additionally, a breakdown of the endpoints is provided below:
 | PUT | `/locals/{id}` | Update the data of a specific location | `{ "local": "...", "cliente": "...", "territorio": "..." }` |
 | DELETE | `/locals/{id}` | Remove a specific location | N/A |
 
+#### 1. Retrieve a list of all locations (`GET /locals`)
+
+**Request Example**
+
+```bash
+curl --request GET \
+  --url http://127.0.0.1:8000/locals/
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+[
+   {
+      "id": 1,
+      "local": "Planta Principal",
+      "cliente": "La Viga",
+      "territorio": "Zona Norte"
+   },
+   {
+      "id": 2,
+      "local": "Planta Ancash",
+      "cliente": "La Viga",
+      "territorio": "Zona Centro"
+   }
+]
+```
+
+#### 2. Retrieve details of a specific location (`GET /locals/{id}`)
+
+**Request Example**
+
+```bash
+curl --request GET \
+  --url http://127.0.0.1:8000/locals/1
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "id": 1,
+  "local": "Planta Principal",
+  "cliente": "La Viga",
+  "territorio": "Zona Norte"
+}
+```
+
+#### 3. Create a new location (`POST /locals`)
+
+**Request Example**
+
+```bash
+curl --request POST \
+  --url http://127.0.0.1:8000/locals/ \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "local": "Bodega Nueva Arequipa",
+  "cliente": "La Viga",
+  "territorio": "Zona Sur"
+}'
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Local creado correctamente.",
+  "id": 47
+}
+```
+
+#### 4. Update the data of a specific location (`PUT /locals/{id}`)
+
+**Request Example**
+
+```bash
+curl --request PUT \
+  --url http://127.0.0.1:8000/locals/1 \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "local": "Planta Principal",
+  "cliente": "La Viga",
+  "territorio": "Zona Sur"
+}'
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Local actualizado correctamente."
+}
+```
+
+#### 5. Remove a specific location (`DELETE /locals/{id}`)
+
+**Request Example**
+
+```bash
+curl --request DELETE \
+  --url http://127.0.0.1:8000/locals/1
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Local eliminado correctamente."
+}
+```
 </details>
 
 <details markdown="1">
@@ -85,6 +199,126 @@ Additionally, a breakdown of the endpoints is provided below:
 | PUT | `/products/{id}` | Update the data of a specific product | `{ "producto": "...", ..., "empresa": "..." }` |
 | DELETE | `/products/{id}` | Remove a specific product | N/A |
 
+
+#### 1. Retrieve a list of all products (`GET /products`)
+
+**Request Example**
+
+```bash
+curl --request GET \
+  --url http://127.0.0.1:8000/products/
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+[
+  {
+  	"id": 1,
+  	"producto": "Motobomba Lite De 10Hp",
+  	"categoria": "Motobombas",
+  	"marca": "Power Flow",
+  	"empresa": "Acme"
+  },
+  {
+  	"id": 2,
+  	"producto": "Valvula De Corte Recto",
+  	"categoria": "Valvulas",
+  	"marca": "Power Flow",
+  	"empresa": "Acme"
+  }
+]
+```
+
+#### 2. Retrieve details of a specific product (`GET /products/{id}`)
+
+**Request Example**
+
+```bash
+curl --request GET \
+  --url http://127.0.0.1:8000/products/1
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "id": 1,
+  "producto": "Motobomba Lite De 10Hp",
+  "categoria": "Motobombas",
+  "marca": "Power Flow",
+  "empresa": "Acme"
+}
+```
+
+#### 3. Create a new product (`POST /products`)
+
+**Request Example**
+
+```bash
+curl --request POST \
+  --url http://127.0.0.1:8000/products/ \
+  --header 'Content-Type: application/json' \
+  --data '{	
+	"producto": "Caldera Corriente Fast",
+	"categoria": "Calderas",
+	"marca": "Cartago",
+	"empresa": "Acme"	
+}'
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Producto creado correctamente.",
+  "id": 24
+}
+```
+
+#### 4. Update the data of a specific product (`PUT /products/{id}`)
+
+**Request Example**
+
+```bash
+curl --request PUT \
+  --url http://127.0.0.1:8000/products/1 \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"producto": "Caldera Corriente Oregon",
+	"categoria": "Calderas",
+	"marca": "Cartamio",
+	"empresa": "Acme"
+}'
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Producto actualizado correctamente."
+}
+```
+
+#### 5. Remove a specific product (`DELETE /products/{id}`)
+
+**Request Example**
+
+```bash
+curl --request DELETE \
+  --url http://127.0.0.1:8000/products/1
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Producto eliminado correctamente."
+}
+```
 </details>
 
 <details markdown="1">
@@ -98,5 +332,115 @@ Additionally, a breakdown of the endpoints is provided below:
 | PUT | `/clients/{id}` | Update the data of a specific client | `{ "cliente": "...", "industria": "..." }` |
 | DELETE | `/clients/{id}` | Remove a specific client | N/A |
 
+
+#### 1. Retrieve a list of all clients (`GET /clients`)
+
+**Request Example**
+
+```bash
+curl --request GET \
+  --url http://127.0.0.1:8000/clients/
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+[
+  {
+  	"id": 1,
+  	"cliente": "Pesquera San Miguel",
+  	"industria": "Pesca"
+  },
+  {
+  	"id": 2,
+  	"cliente": "Pesquera San Antonio",
+  	"industria": "Pesca"
+  }
+]
+```
+
+#### 2. Retrieve details of a specific client (`GET /clients/{id}`)
+
+**Request Example**
+
+```bash
+curl --request GET \
+  --url http://127.0.0.1:8000/clients/1
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "id": 1,
+  "cliente": "Pesquera San Miguel",
+  "industria": "Pesca"
+}
+```
+
+#### 3. Create a new client (`POST /clients`)
+
+**Request Example**
+
+```bash
+curl --request POST \
+  --url http://127.0.0.1:8000/clients/ \
+  --header 'Content-Type: application/json' \
+  --data '{	
+	"cliente": "Gold Investments Plasma",
+	"industria": "Mineria"
+}'
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Cliente creado correctamente.",
+  "id": 13
+}
+```
+
+#### 4. Update the data of a specific client (`PUT /clients/{id}`)
+
+**Request Example**
+
+```bash
+curl --request PUT \
+  --url http://127.0.0.1:8000/clients/1 \
+  --header 'Content-Type: application/json' \
+  --data '{	
+	"cliente": "Golden Investments Fast",
+	"industria": "Mineria"
+}'
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Cliente actualizado correctamente."
+}
+```
+
+#### 5. Remove a specific client (`DELETE /clients/{id}`)
+
+**Request Example**
+
+```bash
+curl --request DELETE \
+  --url http://127.0.0.1:8000/clients/1
+```
+
+**Success Response (HTTP 200 OK)**
+
+```json
+{
+  "success": true,
+  "message": "Cliente eliminado correctamente."
+}
+```
 </details>
 

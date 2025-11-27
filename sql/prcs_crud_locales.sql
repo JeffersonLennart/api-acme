@@ -55,7 +55,7 @@ BEGIN
 		VALUES(p_local, v_clienteid, v_territorioid)
 		RETURNING id INTO v_nuevoid;
 
-		RETURN v_nuevoid
+		RETURN v_nuevoid;
 	-- Si el local ya existe lanzar un error
 	ELSE
 		RAISE EXCEPTION 'El local ya existe.';
